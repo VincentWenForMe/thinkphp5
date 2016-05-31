@@ -30,6 +30,11 @@ class Index extends Controller
     // test方法
     public function test()
     {
-        return 'test!';
+        // 数据查询
+        $data = Db::name('data')->where('id',2)->find();
+        dump($data);
+
+        // 返回最后一条sql语句
+        echo Db::getLastSql();
     }
 }

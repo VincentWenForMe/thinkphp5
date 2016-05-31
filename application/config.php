@@ -15,4 +15,5 @@ return [
     'log'          => [
         'type' => 'trace', // 支持 socket trace file
     ],
+    'url_html_suffix'   => 'html',
 ];
