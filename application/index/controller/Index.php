@@ -2,12 +2,19 @@
 namespace app\index\controller;
 
 use think\Controller;
+use think\Db;
 
 class Index extends Controller
 {
-    public function index($name = 'world')
+    public function index()
     {
-        return 'hello,' . $name;
+        // 利用Db方法取数据库中的数据
+        $data = Db::name('data')->find();
+        // dump($data);
+        // 将数据传入V层
+        $this->assign('data',$data);
+        // 渲染模板
+        return $this->fetch();
     }
 
     /**
