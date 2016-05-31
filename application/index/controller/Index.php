@@ -3,8 +3,8 @@ namespace app\index\controller;
 
 class Index
 {
-    public function index()
+    public function index($name = 'world')
     {
-        return 'hello world';
+        return 'hello,' . $name;
     }
 }
