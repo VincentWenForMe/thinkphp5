@@ -1,7 +1,9 @@
 <?php
 namespace app\index\controller;
 
-class Index
+use think\Controller;
+
+class Index extends Controller
 {
     public function index($name = 'world')
     {
@@ -13,23 +15,14 @@ class Index
      * public protect private
      */
     // hello方法
-    public function hello()
+    public function hello($name = 'world')
     {
-        return 'hello!';
+        $this->assign('name',$name);
+        return $this->fetch();
     }
     // test方法
     public function test()
     {
         return 'test!';
-    }
-    // hello2方法
-    protected function hello2()
-    {
-        return 'hello2';
-    }
-    // test2方法
-    private function test2()
-    {
-        return 'test2';
     }
 }
