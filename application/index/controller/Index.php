@@ -31,15 +31,20 @@ class Index extends Controller
     public function test()
     {
         // 数据查询
-        $data = Db::name('data')
-        // 批量查询
+        $count = Db::name('data')
+        // 统计data里所有数据
         ->where('status',1)
-        ->column('name','id');
+        ->count();
+
+        // 统计user分最高的
+        // $count = Db::name('user')
+        // ->where('status','0')
+        // ->max('score');
 
         // 返回最后一条sql语句
         echo Db::getLastSql();
 
         // 查看返回数组
-        dump($data);
+        dump($count);
     }
 }
