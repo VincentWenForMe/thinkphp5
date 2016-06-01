@@ -31,9 +31,12 @@ class Index extends Controller
     public function test()
     {
         // 数据查询
-        $data = Db::name('data')->where('id','between',[1,5])
-        // 添加关键字think
-        ->where('name','like','%think%')
+        $data = Db::name('data')
+        // 批量查询
+        ->where([
+            'id'=>['between','1,5'],
+            'name'=>['like','%think%'],
+            ])
         ->select();
 
         // 返回最后一条sql语句
