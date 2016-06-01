@@ -33,7 +33,7 @@ class Index extends Controller
         // 数据查询
         $data = Db::name('data')
         // 批量查询
-        ->where('id&status','>',0)
+        ->where('id|status','>',0)
         ->limit(5)
         ->select();
 
