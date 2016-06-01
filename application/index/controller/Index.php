@@ -33,8 +33,8 @@ class Index extends Controller
         // 数据查询
         $data = Db::name('data')
         // 批量查询
-        ->where('id',1)
-        ->value('name');
+        ->where('status',1)
+        ->column('name');
 
         // 返回最后一条sql语句
         echo Db::getLastSql();
