@@ -31,7 +31,7 @@ class Index extends Controller
     public function test()
     {
         // 数据查询
-        $data = Db::name('data')->where('id','EXP','>=1')->limit(10)->select();
+        $data = Db::name('data')->where('id','in',[1,2,3])->limit(10)->select();
 
         // 返回最后一条sql语句
         echo Db::getLastSql();
