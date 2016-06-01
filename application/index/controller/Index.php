@@ -37,9 +37,9 @@ class Index extends Controller
         ->count();
 
         // 统计user分最高的
-        // $count = Db::name('user')
-        // ->where('status','0')
-        // ->max('score');
+        $count = Db::name('user')
+        ->where('status','0')
+        ->max('score');
 
         // 返回最后一条sql语句
         echo Db::getLastSql();
