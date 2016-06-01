@@ -31,10 +31,12 @@ class Index extends Controller
     public function test()
     {
         // 数据查询
-        $data = Db::name('data')->where('id',2)->find();
-        dump($data);
+        $data = Db::name('data')->where('id','>=',1)->limit(10)->select();
 
         // 返回最后一条sql语句
         echo Db::getLastSql();
+
+        // 查看返回数组
+        dump($data);
     }
 }
