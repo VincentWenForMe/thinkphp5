@@ -41,10 +41,15 @@ class Index extends Controller
         ->where('status','0')
         ->max('score');
 
+        // 字符串查询
+        $data = Db::name('data')
+        ->where('id > :id AND name IS NOT NULL',['id' => 5])
+        ->select();
+
         // 返回最后一条sql语句
         echo Db::getLastSql();
 
         // 查看返回数组
-        dump($count);
+        dump($data);
     }
 }
