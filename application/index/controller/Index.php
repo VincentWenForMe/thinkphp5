@@ -33,10 +33,8 @@ class Index extends Controller
         // 数据查询
         $data = Db::name('data')
         // 批量查询
-        ->where([
-            'id'=>['between','1,5'],
-            'name'=>['like','%think%'],
-            ])
+        ->where('id&status','>',0)
+        ->limit(5)
         ->select();
 
         // 返回最后一条sql语句
