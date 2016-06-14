@@ -19,6 +19,7 @@ class Index extends Controller
         return $this->fetch();
     }
 
+    // 新增数据
     public function add()
     {
         $user['nickname'] = '看云';
@@ -31,4 +32,5 @@ class Index extends Controller
             return '新增出错';
         }
     }
+
 }
