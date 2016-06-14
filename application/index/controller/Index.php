@@ -18,4 +18,9 @@ class Index extends Controller
         $this->assign('users',$users);
         return $this->fetch();
     }
+
+    public function add()
+    {
+        echo "添加";
+    }
 }
