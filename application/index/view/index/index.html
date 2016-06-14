@@ -1,4 +1,20 @@
 {extend name="index:base" /}
 {block name='body'}
- hello
+<table>
+    <tr>
+        <th>昵称</th>
+        <th>邮箱</th>
+        <th>生日</th>
+    </tr>
+    {volist name='users' id='user' key='key'}
+    <tr>
+        <td>{:$user->nickname}</td>
+        <td>{:$user->email}</td>
+        <td>{:$user->birthday}</td>
+    </tr>
+    {/volist}
+    <tr>
+        <td></td>
+    </tr>
+</table>
 {/block}

@@ -8,8 +8,14 @@ class Index extends Controller
 {
     public function index()
     {
-        $test = new User(); //对象实例化
-        // dump($test);
+        //对象实例化
+        $User  = new User();
+        //取数据
+        $users = $User::all();
+        // dump($users);
+
+        // 数据传入V层
+        $this->assign('users',$users);
         return $this->fetch();
     }
 }
