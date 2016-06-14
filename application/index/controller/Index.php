@@ -21,6 +21,14 @@ class Index extends Controller
 
     public function add()
     {
-        echo "添加";
+        $user['nickname'] = '看云';
+        $user['email']    = 'kancloud@qq.com';
+        $user['birthday'] = strtotime('2015-04-02');
+        if ($result = User::create($user)) {
+            return '用户[ ' . $result->nickname . ':' . $result->id . ' ]新增成功';
+        }
+        else {
+            return '新增出错';
+        }
     }
 }
