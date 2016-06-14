@@ -9,6 +9,7 @@ class Index extends Controller
     public function index()
     {
         $test = new User(); //对象实例化
-        dump($test);
+        // dump($test);
+        return $this->fetch();
     }
 }
