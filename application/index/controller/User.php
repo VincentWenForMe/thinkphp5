@@ -27,9 +27,9 @@ class User extends Controller
     {
         $User = new UserModel();
         $list = [
-            ['nickname'=>'meiko1','email'=>'123@11.com','birthday'=>strtotime('1999-06-01')],
+            ['nickname'=>'meiko','email'=>'123@11.com','birthday'=>strtotime('19990601')],
             // ['nickname'=>'deft','email'=>'132@11.com','birthday'=>strtotime('1999-05-02')],
-            // ['nickname'=>'marin','email'=>'123@11.com','birthday'=>strtotime('199706701')],
+            // ['nickname'=>'marin','email'=>'123@11.com','birthday'=>strtotime('19970701')],
         ];
         if ($User->saveAll($list)) {
             return '用户批量新增成功';
