@@ -39,13 +39,25 @@ class User extends Controller
         }
     }
 
-    public function read($id='')
+    public function read()
     {
-        $user = UserModel::get($id);
+        $user = UserModel::getByEmail('11@1.com');
         // dump($user);
         echo $user->nickname . '<br/>';
         echo $user->email . '<br/>';
         echo date('Y/m/d', $user->birthday) . '<br/>';
     }
+
+    public function search()
+    {
+        $list = UserModel::all(['status'=>1]);
+        foreach ($list as $user) {
+            echo $user->nickname . '<br/>';
+            echo $user->email . '<br/>';
+            echo date('Y/m/d', $user->birthday) . '<br/>';
+            echo '----------------------------------<br/>';
+        }
+}
+
 
 }
