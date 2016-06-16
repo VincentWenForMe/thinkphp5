@@ -41,8 +41,8 @@ class User extends Controller
 
     public function read()
     {
-        $user = UserModel::getByEmail('11@1.com');
-        // dump($user);
+        $user = UserModel::get(['nickname'=>'流年']);
+        dump($user);
         echo $user->nickname . '<br/>';
         echo $user->email . '<br/>';
         echo date('Y/m/d', $user->birthday) . '<br/>';
