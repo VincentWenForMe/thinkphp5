@@ -41,11 +41,14 @@ class User extends Controller
 
     public function read()
     {
-        $user = UserModel::get(['nickname'=>'pawn']);
+        $users = UserModel::all();
         // dump($user);
-        echo $user->nickname . '<br/>';
-        echo $user->email . '<br/>';
-        echo date('Y/m/d', $user->birthday) . '<br/>';
+        foreach ($users as $key => $user) {
+            echo $user->nickname . '<br/>';
+            echo $user->email . '<br/>';
+            echo date('Y/m/d', $user->birthday) . '<br/>';
+            echo '----------------------------------<br/>';
+        }
     }
 
     public function search()
@@ -57,7 +60,22 @@ class User extends Controller
             echo date('Y/m/d', $user->birthday) . '<br/>';
             echo '----------------------------------<br/>';
         }
-}
+    }
+
+    public function update($id='')
+    {
+        // $user           = UserModel::get($id);
+        $user = UserModel::get(['id'=>'5']);
+        // dump($user);
+        $user->nickname = 'litian';
+        $user->email    = '111@qq.com';
+        if (false !== $user->save()) {
+            return '更新成功';
+        }
+        else{
+            return $user->getError();
+        }
+    }
 
 
 }
