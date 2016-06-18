@@ -64,9 +64,9 @@ class User extends Controller
 
     public function update($id='')
     {
-        // $user           = UserModel::get($id);
-        $user = UserModel::get(['id'=>'5']);
-        // dump($user);
+        $user           = UserModel::get($id);
+        // $user = UserModel::get(['id'=>'5']);
+        dump($user);
         $user->nickname = 'litian';
         $user->email    = '111@qq.com';
         if (false !== $user->save()) {
